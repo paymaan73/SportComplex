@@ -12,4 +12,9 @@ class User < ApplicationRecord
             length: {maximum: 120},
             format: {with: VALID_EMAIL},
             uniqueness: true
+
+  #  password bcrypt gem file
+  has_secure_password
+
+
 end
