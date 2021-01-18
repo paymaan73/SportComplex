@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :user_action, only: [:show, :edit, :update, :destroy]
+  before_action :skip_login, only:[ :edit]
 
   def new
 
@@ -62,6 +63,16 @@ class UsersController < ApplicationController
 
     @user  = User.find(params[:id])
 
+  end
+
+  def skip_login
+
+    unless log_in?
+
+      flash[:danger]  = "you must login for activity"
+      redirect_to login_url
+
+    end
   end
 
 

@@ -4,3 +4,10 @@
         <h2><%= v %></h2>
     </div>
 <% end %>
+
+<% if log_in? && !@current_user.sports.present? %>
+    <%= link_to "Football", sport_activity_url(name_sport: 'football'), method: :post  %>&ndash;
+    <%= link_to "Mountaineering", sport_activity_url(name_sport: 'mountaineering'), method: :post  %>&ndash;
+    <%= link_to "RidingBike", sport_activity_url(name_sport: 'riding_bike'), method: :post  %>&ndash;
+    <%= link_to "Chess", sport_activity_path(name_sport: 'Chess'), method: :post  %>&ndash;
+<% end %>

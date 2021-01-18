@@ -3,5 +3,5 @@
     <span><%= @user.email %></span>
 </div>
 
-<%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Do you sure?"} %>
+<%= link_to "Edit", edit_user_path(@user) if @user.id == @current_user %>
+<%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Do you sure?"} if @user.id == @current_user %>

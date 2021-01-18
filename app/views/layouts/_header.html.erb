@@ -4,6 +4,12 @@
         <ul>
             <% if log_in? %>
                 <li><%= link_to "log_out", logout_url, method: :delete %></li>
+                <li><%= link_to "profile", edit_user_url(@current_user)  %></li>&ndash;
+                <% if @current_user.sports.present? %>
+                    <% @current_user.sports.each do |sport| %>
+                        <strong><%= sport.name %></strong>
+                    <% end %>
+                <% end %>
             <% else %>
                 <li><%= link_to "sign_up", new_user_path %></li>
                 <li><%= link_to "login", login_url %></li>

@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_secure_password
 
   #  Relationship one_to_one for tables
-  has_one :sport
+  has_many :sports, dependent: :destroy
 
 
 end
