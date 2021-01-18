@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_141737) do
+ActiveRecord::Schema.define(version: 2021_01_18_142411) do
 
   create_table "sports", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_141737) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "weight"
     t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email"
   end
 
 end

@@ -2,6 +2,6 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :sport, only[:index, :create]
+  resources :sports, only:[:index, :create]
 
 end
