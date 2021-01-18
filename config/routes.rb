@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: "sports#index"
+
   resources :users
 
   resources :sports, only:[:index, :create]

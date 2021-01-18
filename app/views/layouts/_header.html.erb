@@ -1,0 +1,13 @@
+<header>
+    <h1>Sport Complex</h1>
+    <nav>
+        <ul>
+            <% if log_in? %>
+                <li><%= link_to "log_out", logout_url, method: :delete %></li>
+            <% else %>
+                <li><%= link_to "sign_up", new_user_path %></li>
+                <li><%= link_to "login", login_url %></li>
+            <% end %>
+        </ul>
+    </nav>
+</header>

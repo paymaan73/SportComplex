@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
 
   def create
 
-    @user  = User.find_by(email: params[:email])
+    @user  = User.find_by(email: params[:session][:email])
 
-    if @user && User.find_by(password: params[:password])
-      login @user
+    if @user && @user.authenticate(params[:session][:password])
+      login @user # method helper of sessions helper
       flash[:success]  = "your login account..."
-      redirect_to sports_url
+      redirect_to root_path
     else
       render 'new'
     end
@@ -19,9 +19,10 @@ class SessionsController < ApplicationController
 
   def destroy
 
-    log_out
+    log_out #method helper of sessions helper
 
     redirect_to sports_url
 
   end
+
 end
