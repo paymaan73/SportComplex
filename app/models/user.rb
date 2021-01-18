@@ -16,7 +16,7 @@ class User < ApplicationRecord
   #  password bcrypt gem file
   has_secure_password
 
-  #  Relationship one_to_one for tables
+  #  Relationship one_to_many for tables
   has_many :sports, dependent: :destroy
 
 
