@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
     log_out #method helper of sessions helper
 
-    redirect_to sports_url
+    redirect_to root_path
 
   end
 
